@@ -8,7 +8,7 @@ public class ContaCorrente extends Registro {
 	private int agencia;
 	private String numero;
 	private double saldo;
-	private String nomeDoCorrentista;
+	private String nomeCorrentista;
 
 	public ContaCorrente() {
 	}
@@ -18,7 +18,7 @@ public class ContaCorrente extends Registro {
 		this.agencia = agencia;
 		this.numero = numero;
 		this.saldo = saldo;
-		this.nomeDoCorrentista = nomeDoCorrentista;
+		this.nomeCorrentista = nomeDoCorrentista;
 	}
 
 	public int getAgencia() {
@@ -38,11 +38,11 @@ public class ContaCorrente extends Registro {
 	}
 
 	public String getNomeDoCorrentista() {
-		return nomeDoCorrentista;
+		return nomeCorrentista;
 	}
 
 	public void setNomeDoCorrentista(String nomeDoCorrentista) {
-		this.nomeDoCorrentista = nomeDoCorrentista;
+		this.nomeCorrentista = nomeDoCorrentista;
 	}
 
 	public double getSaldo() {

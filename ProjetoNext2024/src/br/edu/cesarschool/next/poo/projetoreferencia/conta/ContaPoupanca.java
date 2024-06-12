@@ -19,7 +19,7 @@ package br.edu.cesarschool.next.poo.projetoreferencia.conta;
 		public void setPercentualBonus(double percentualBonus) {
 			this.percentualBonus = percentualBonus;
 		}
-		@Override
+		
 		void creditar(double valor) {
 			super.creditar(valor *(1 + percentualBonus / 100));		 
 		}
