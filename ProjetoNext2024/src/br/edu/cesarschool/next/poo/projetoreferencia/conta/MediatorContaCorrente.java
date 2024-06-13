@@ -50,8 +50,8 @@ public class MediatorContaCorrente {
 		if (conta.getSaldo() < 0) {
 			return "Saldo inválido";
 		}
-		if (StringUtils.stringVazia(conta.getNomeDoCorrentista()) ||
-				conta.getNomeDoCorrentista().length() > 60) {
+		if (StringUtils.stringVazia(conta.getNomeCorrentista()) ||
+				conta.getNomeCorrentista().length() > 60) {
 			return "Nome do correntista inválido";
 		}
 		if (conta instanceof ContaPoupanca) {
@@ -140,5 +140,17 @@ public class MediatorContaCorrente {
 		}
 		return null;
 	}
-
+	
+	String excluirContasSaldoZero() {
+		int qtdContasExcluidas = 0;
+		Registro[] regsArray = dao.buscarTodos();
+		for (Registro registro : regsArray) {
+			ContaCorrente conta = (ContaCorrente)registro;
+			if (conta.getSaldo() == 0) {
+				dao.excluir(ContaCorrente.obterChave(conta));
+				qtdContasExcluidas++;
+			}
+		}
+		return "Foram exclu�das " + qtdContasExcluidas;		
+	}
 }

@@ -13,12 +13,12 @@ public class ContaCorrente extends Registro {
 	public ContaCorrente() {
 	}
 
-	public ContaCorrente(int agencia, String numero, double saldo, String nomeDoCorrentista) {
+	public ContaCorrente(int agencia, String numero, double saldo, String nomeCorrentista) {
 		super();
 		this.agencia = agencia;
 		this.numero = numero;
 		this.saldo = saldo;
-		this.nomeCorrentista = nomeDoCorrentista;
+		this.nomeCorrentista = nomeCorrentista;
 	}
 
 	public int getAgencia() {
@@ -37,12 +37,12 @@ public class ContaCorrente extends Registro {
 		this.numero = numero;
 	}
 
-	public String getNomeDoCorrentista() {
+	public String getNomeCorrentista() {
 		return nomeCorrentista;
 	}
 
-	public void setNomeDoCorrentista(String nomeDoCorrentista) {
-		this.nomeCorrentista = nomeDoCorrentista;
+	public void setNomeCorrentista(String nomeCorrentista) {
+		this.nomeCorrentista = nomeCorrentista;
 	}
 
 	public double getSaldo() {
@@ -65,6 +65,10 @@ public class ContaCorrente extends Registro {
 		return StringUtils.formatar(agencia, 3) + numero;
 	}
 
+	public static String obterChave(ContaCorrente conta) {
+		return obterChave(conta.getAgencia(), conta.getNumero());	
+	}
+	
 	public double obterAliquotaCpmf() {
 		return 0.3;
 	}
